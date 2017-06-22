@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 01641a182b1144f49b5327a01391f87b
+timeCreated: 1498061794
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Organique DEMO
+  fontNames:
+  - Organique DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
