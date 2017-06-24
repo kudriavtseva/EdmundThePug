@@ -21,24 +21,40 @@ public class HeroPug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
+		
+    }
+
+    void FixedUpdate()
+    {
 		float value = Input.GetAxis ("Horizontal");
 		
 		Animator animator = GetComponent<Animator> ();
 		SpriteRenderer sr = GetComponent<SpriteRenderer>();
-		Vector3 from = transform.position + Vector3.up * 0.3f;
-		Vector3 to = transform.position + Vector3.down * 0.1f;
+		Vector3 from = transform.position + Vector3.up * 0.6f;
+		Vector3 to = transform.position + Vector3.down * 0.3f;
 		int layer_id = 1 << LayerMask.NameToLayer ("Ground");
 		RaycastHit2D hit = Physics2D.Linecast(from, to, layer_id);
 		
-		if (Mathf.Abs (value) > 0) {
+		//Debug.Log(layer_id, this);
+		Debug.DrawLine (from, to, Color.red);
+		
+		if(value != 0) {
 			animator.SetBool ("run", true);
 			Vector2 vel = myBody.velocity;
 			vel.x = value * speed;
 			myBody.velocity = vel;
-			
 		} else {
 			animator.SetBool ("run", false);
 		}
+		
+		/*if (Mathf.Abs (value) > 0) {
+			
+			Vector2 vel = myBody.velocity;
+			vel.x = value * speed;
+			myBody.velocity = vel;
+			
+		}*/
 		
 		if(value < 0) {
 			sr.flipX = true;
@@ -56,12 +72,12 @@ public class HeroPug : MonoBehaviour
 			Debug.Log("Cyka blyat", this);
 			isGrounded = true;
 		} else {
-			Debug.Log("Cyka blyat2222", this);
 			isGrounded = false;
 		}
 		
-		if(Input.GetButtonDown("Jump")) {
+		if(Input.GetButtonDown("Jump") && !this.JumpActive) {
 			this.JumpActive = true;
+			animator.SetBool ("jump", true);
 		}
 		if(this.JumpActive) {
 			//Якщо кнопку ще тримають
@@ -75,13 +91,8 @@ public class HeroPug : MonoBehaviour
 			} else {
 				this.JumpActive = false;
 				this.JumpTime = 0;
+				animator.SetBool ("jump", false);
 			}
 		}
-		
-    }
-
-    void FixedUpdate()
-    {
-	
     }
 }
