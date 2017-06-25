@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
 	public static LevelController current;
@@ -23,4 +23,10 @@ public class LevelController : MonoBehaviour {
 	public void addBones (int bones) {
 		bones_count += bones;
 	}
+
+    public void StartMenuScene()
+    {
+       SceneManager.LoadScene("Menu");
+    }
+    
 }

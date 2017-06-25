@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{43465426-CAC2-2938-A45B-D405F1D5FAE5}</ProjectGuid>
+    <ProjectGuid>{82391AF7-EABE-5427-064B-04949E1E14BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,8 +46,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Content\Scripts\Bones.cs" />
+     <Compile Include="Assets\Content\Scripts\Collectable.cs" />
+     <Compile Include="Assets\Content\Scripts\DeathHere.cs" />
+     <Compile Include="Assets\Content\Scripts\EndLevelTrigger.cs" />
+     <Compile Include="Assets\Content\Scripts\EnemyCat.cs" />
      <Compile Include="Assets\Content\Scripts\HeroFollow.cs" />
      <Compile Include="Assets\Content\Scripts\HeroPug.cs" />
+     <Compile Include="Assets\Content\Scripts\LevelController.cs" />
+     <Compile Include="Assets\Content\Scripts\MenuController.cs" />
+     <Compile Include="Assets\Content\Scripts\MovingPlatform.cs" />
      <Compile Include="Assets\Content\Scripts\ParallaxLayer.cs" />
      <Compile Include="Assets\Libraries\GUI\Scripts\Interaction\EnvelopContent.cs" />
      <Compile Include="Assets\Libraries\GUI\Scripts\Interaction\LanguageSelection.cs" />
