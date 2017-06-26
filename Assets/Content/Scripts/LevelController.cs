@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour {
 	
 	void Awake() {
 		current = this;
+
 	}
 
 	Vector3 startingPosition;
