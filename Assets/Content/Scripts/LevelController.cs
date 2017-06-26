@@ -17,7 +17,7 @@ public class LevelController : MonoBehaviour {
 		this.startingPosition = pos;
 	}
 	public void onPugDeath(HeroPug pug) {
-		//При смерті кролика повертаємо на початкову позицію
+		//При смерті мопса повертаємо на початкову позицію
 		pug.transform.position = this.startingPosition;
 	}
 	
