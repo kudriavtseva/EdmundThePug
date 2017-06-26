@@ -27,6 +27,10 @@ public class LevelController : MonoBehaviour {
 
     public void StartMenuScene()
     {
+		AudioSource pug_music = GameObject.Find ("pug").GetComponent<AudioSource> ();
+
+		pug_music.volume = MenuController.isMusicOn () ? 100 : 0;
+			
        SceneManager.LoadScene("Menu");
     }
     
