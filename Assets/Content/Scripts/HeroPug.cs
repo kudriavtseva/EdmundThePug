@@ -48,21 +48,24 @@ public class HeroPug : MonoBehaviour
     }
     void onHealthChange()
     {
+		UILabel health_count = GameObject.Find ("health_count").GetComponent<UILabel> ();
 
         if (this.health == 1)
         {
+			health_count.text = "2/3";
             this.transform.localScale = Vector3.one;
         }
         else if (this.health == 2)
         {
+			health_count.text = "3/3";
             this.transform.localScale = Vector3.one * 1.2f;
         }
         else if (this.health == 0)
         {
+			health_count.text = "1/3";
             LevelController.current.onPugDeath(this);
 
         }
-
     }
 
 

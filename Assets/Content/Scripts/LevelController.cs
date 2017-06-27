@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour {
 	
 	void Awake() {
 		current = this;
+
 	}
 
 	Vector3 startingPosition;
@@ -16,7 +17,7 @@ public class LevelController : MonoBehaviour {
 		this.startingPosition = pos;
 	}
 	public void onPugDeath(HeroPug pug) {
-		//При смерті кролика повертаємо на початкову позицію
+		//При смерті мопса повертаємо на початкову позицію
 		pug.transform.position = this.startingPosition;
 	}
 	
@@ -26,6 +27,10 @@ public class LevelController : MonoBehaviour {
 
     public void StartMenuScene()
     {
+		AudioSource pug_music = GameObject.Find ("pug").GetComponent<AudioSource> ();
+
+		pug_music.volume = MenuController.isMusicOn () ? 100 : 0;
+			
        SceneManager.LoadScene("Menu");
     }
     

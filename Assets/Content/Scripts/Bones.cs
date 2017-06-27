@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bones : Collectable
 {
 
+	public UILabel bones_count;
     // Use this for initialization
     void Start()
     {
@@ -19,6 +20,9 @@ public class Bones : Collectable
 
     protected override void OnPugHit(HeroPug pug)
     {
+		LevelController.current.addBones(1);
+		bones_count = GameObject.Find ("bones_count").GetComponent<UILabel>();
+		bones_count.text = LevelController.current.bones_count + "/8";
         this.CollectedHide();
     }
 }
