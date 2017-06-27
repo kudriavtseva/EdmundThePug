@@ -20,7 +20,7 @@ public class HeroPug : MonoBehaviour
 		this.heroParent = this.transform.parent;
         myBody = this.GetComponent<Rigidbody2D>();
 		LevelController.current.setStartPosition (transform.position);
-		this.transform.localScale = Vector3.one * 1.2f;
+		//this.transform.localScale = Vector3.one * 1.2f;
     }
 
     // Update is called once per frame
@@ -54,12 +54,12 @@ public class HeroPug : MonoBehaviour
         if (this.health == 1)
         {
 			health_count.text = "1/2";
-            this.transform.localScale = Vector3.one;
+            //this.transform.localScale = Vector3.one;
         }
         else if (this.health == 2)
         {
 			health_count.text = "2/2";
-            this.transform.localScale = Vector3.one * 1.2f;
+            //this.transform.localScale = Vector3.one * 1.2f;
         }
         else if (this.health == 0)
         {

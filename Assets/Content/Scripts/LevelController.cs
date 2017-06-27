@@ -34,5 +34,9 @@ public class LevelController : MonoBehaviour {
 			
        SceneManager.LoadScene("Menu");
     }
+	
+	public void pause() {
+		SceneManager.LoadScene("Menu");
+	}
     
 }
