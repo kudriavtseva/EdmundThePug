@@ -19,6 +19,7 @@ public class LevelController : MonoBehaviour {
 	public void onPugDeath(HeroPug pug) {
 		//При смерті мопса повертаємо на початкову позицію
 		pug.transform.position = this.startingPosition;
+		pug.resetHealth();
 	}
 	
 	public void addBones (int bones) {

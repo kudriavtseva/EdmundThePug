@@ -21,6 +21,7 @@ public class DeathHere : MonoBehaviour {
 		if(pug != null) {
 		//Повідомляємо рівень, про смерть кролика
 			LevelController.current.onPugDeath (pug);
+			//pug.removeHealth(1);
 		}
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroPug : MonoBehaviour
 {
-    public float health = 1;
+    public float health = 2;
     public float speed = 1;
     Rigidbody2D myBody = null;
 	Transform heroParent = null;
@@ -20,6 +20,7 @@ public class HeroPug : MonoBehaviour
 		this.heroParent = this.transform.parent;
         myBody = this.GetComponent<Rigidbody2D>();
 		LevelController.current.setStartPosition (transform.position);
+		this.transform.localScale = Vector3.one * 1.2f;
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class HeroPug : MonoBehaviour
     }
     public void resetHealth()
     {
-        this.health = 1;
+        this.health = 2;
         this.onHealthChange();
     }
     void onHealthChange()
@@ -52,17 +53,17 @@ public class HeroPug : MonoBehaviour
 
         if (this.health == 1)
         {
-			health_count.text = "2/3";
+			health_count.text = "1/2";
             this.transform.localScale = Vector3.one;
         }
         else if (this.health == 2)
         {
-			health_count.text = "3/3";
+			health_count.text = "2/2";
             this.transform.localScale = Vector3.one * 1.2f;
         }
         else if (this.health == 0)
         {
-			health_count.text = "1/3";
+			health_count.text = "0/2";
             LevelController.current.onPugDeath(this);
 
         }
